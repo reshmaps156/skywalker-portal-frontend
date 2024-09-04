@@ -10,7 +10,7 @@ function Header() {
         <>
             <Navbar className="p-3">
                 <Container>
-                    <Navbar.Brand href="#home" style={{color:'#fff'}}>
+                    <Navbar.Brand href="#home" style={{ color: '#D3D3D3' }}>
                     <FontAwesomeIcon icon={faJedi} className={`${appStyle.goldText} me-2`} size='xl'/>   
                     Skywalker Portal
                     </Navbar.Brand>
