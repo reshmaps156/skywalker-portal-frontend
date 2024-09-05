@@ -15,16 +15,16 @@ function Footer() {
                             <FontAwesomeIcon icon={faJedi} size='2x' className='text-warning me-3' />
                             <h5 className='text-white'>Skywalker Portal</h5>
                         </div>
-                        <p style={{textAlign:'justify'}}>Your gateway to the Force, where justice and peace are upheld. Discover more about Alden Skywalker and stay updated with the latest news and insights</p>
+                        <p style={{ textAlign: 'justify' }}>Your gateway to the Force, where justice and peace are upheld. Discover more about Alden Skywalker and stay updated with the latest news and insights</p>
                     </div>
                     <div className="col-md-1"></div>
                     <div className='col-md-3 p-3'>
                         <h5 className='text-warning mb-3'>Quick Links</h5>
                         <ul className='list-unstyled'>
-                            <li><a href='/' className='text-secondary text-decoration-none'>Home</a></li>
-                            <li><a href='/about' className='text-secondary text-decoration-none'>About</a></li>
-                            <li><a href='/login' className='text-secondary text-decoration-none'>Login</a></li>
-                            <li><a href='/contact' className='text-secondary text-decoration-none'>Contact Us</a></li>
+                            <li className='mb-2'><a href='/' className='text-secondary text-decoration-none '>Home</a></li>
+                            <li className='mb-2'><a href='/about' className='text-secondary text-decoration-none'>About</a></li>
+                            <li className='mb-2'><a href='/login' className='text-secondary text-decoration-none'>Login</a></li>
+                            <li className='mb-2'><a href='/contact' className='text-secondary text-decoration-none'>Contact Us</a></li>
                         </ul>
                     </div>
                     <div className='col-md-4 p-3'>
@@ -42,7 +42,7 @@ function Footer() {
                             <FontAwesomeIcon icon={faYoutube} size='xl' />
                         </a>
                         <a className='text-secondary  me-3'>
-                        <FontAwesomeIcon icon={faThreads} size='xl'/>
+                            <FontAwesomeIcon icon={faThreads} size='xl' />
                         </a>
                     </div>
                 </div>

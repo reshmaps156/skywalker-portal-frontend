@@ -1,5 +1,62 @@
-@media(max-width:978px){
-    .tagLine{
-        display: none;
-    }
-}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+   
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 50vh; 
+    object-fit: cover;
+  
+  }
+  
+  .hero-content {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    max-width: 800px;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+  
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+    margin-top: 10px;
+   
+  }
+
+  
+  /* Skills Section */
+  .skills-section .skill-card {
+    background-color: #101010;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skills-section .skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); 
+  }
+  
+  /* Biography Section */
+  .biography-section .biography-text {
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .biography-section {
+    transition: color 0.3s ease;
+    color: #ffffff;
+  }
+  
+
+
