@@ -8,7 +8,7 @@ import appStyle from '../appStyle.module.css'
 function Header() {
     return (
         <>
-            <Navbar className="p-3">
+            <Navbar className={`${appStyle.pageBg} p-4`}>
                 <Container>
                     <Navbar.Brand href="#home" style={{ color: '#D3D3D3' }}>
                     <FontAwesomeIcon icon={faJedi} className={`${appStyle.goldText} me-2`} size='xl'/>   

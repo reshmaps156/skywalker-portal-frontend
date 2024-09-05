@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../layout/Header'
 import { Col, Row } from 'react-bootstrap'
-import skywalkerImage from '../assets/skywalker-image.jpg'
+import skywalkerImage from '../assets/skywalker-image.png'
 import { motion } from 'framer-motion'
 
 
@@ -10,7 +10,7 @@ function Home() {
     return (
         <>
             <Header />
-            <section>
+            <section >
                 <Row className='m-5  p-5' >
                     <Col md={6} sm={12} className='mt-5 d-flex align-items-center justify-content-center'>
                         <div>
