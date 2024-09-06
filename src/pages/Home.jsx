@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 import skywalkerImage from '../assets/skywalker-image.png'
 import './home.css'
 import { motion, useAnimation } from 'framer-motion';
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -18,6 +20,26 @@ function Home() {
         { title: 'Enhanced Perception', description: 'Heightened senses that detect lies, uncover hidden details, and see through deceit.' },
         { title: 'Super Strength', description: 'Exceptional physical strength, capable of overcoming any obstacle.' },
 
+    ];
+    const testimonials = [
+        {
+            id: 1,
+            name: 'Sheldon Cooper',
+            text: "I've never experienced such an efficient grievance process. Skywalker's approach is both compassionate and effective. I'm truly grateful for the help I received.",
+            image: 'https://beatlemedo.wordpress.com/wp-content/uploads/2013/04/jim_parsons_by_ninaavdeenko.jpg',
+        },
+        {
+            id: 2,
+            name: ' Bernadette',
+            text: "Skywalker helped me resolve my issue faster than I could have imagined. The process was smooth, and I felt heard throughout the entire experience.",
+            image: 'https://retroeyeworks.wordpress.com/wp-content/uploads/2014/06/635127684105530000.jpg',
+        },
+        {
+            id: 3,
+            name: 'George Cooper',
+            text: "From start to finish, the entire process was seamless. I felt supported, and my issue was resolved promptly. Skywalker's team is top-notch!",
+            image: 'https://ntvb.tmsimg.com/assets/assets/1046299_v9_bc.jpg',
+        },
     ];
 
     useEffect(() => {
@@ -86,7 +108,7 @@ function Home() {
 
             {/* Indro Section */}
             <section>
-                <div  className=" position-relative">
+                <div className=" position-relative">
                     <img
                         src="https://pixelz.cc/wp-content/uploads/2018/07/star-wars-battlefront-2-kylo-ren-uhd-4k-wallpaper.jpg"
                         alt="Alden Skywalker Intro"
@@ -132,6 +154,36 @@ function Home() {
                 </div>
             </section>
 
+            <section className=' p-5'>
+                <h1 className='text-center mb-4 display-4'>Testimonials</h1>
+                <div className='row justify-content-center'>
+                    {testimonials.map((testimonial) => (
+                        <motion.div
+                            key={testimonial.id}
+                            className='col-md-4 mb-4'
+                            whileHover={{ scale: 1.05 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 50 }}
+                            transition={{ duration: 0.5, delay: testimonial.id * 0.1 }}
+                        >
+                            <div className='card testimonial-card p-4 shadow-sm'>
+                                <div className='d-flex align-items-center mb-3'>
+                                    <img
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className='rounded-circle me-3 testimonial-image'
+                                    />
+                                    <h5 className='m-0'>{testimonial.name}</h5>
+                                </div>
+                                <p className='testimonial-text'>{testimonial.text}</p>
+                              
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            
 
 
         </>
