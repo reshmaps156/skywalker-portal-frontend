@@ -1,62 +1,140 @@
 
-
-/* Hero Section */
+/* HERO */
 .hero-section {
-    position: relative;
-   
-  }
-  
-  .hero-image {
-    width: 100%;
-    height: 50vh; 
-    object-fit: cover;
-  
-  }
-  
-  .hero-content {
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    max-width: 800px;
-    padding: 20px;
-    color: #fff;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-  
-  }
-  
-  .hero-tagline {
-    font-size: 1.2rem;
-    margin-top: 10px;
-   
-  }
+  position: relative;
 
-  
-  /* Skills Section */
-  .skills-section .skill-card {
-    background-color: #101010;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .skills-section .skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); 
-  }
-  
-  /* Biography Section */
-  .biography-section .biography-text {
-    line-height: 1.6;
-    text-align: justify;
-  }
-  
-  .biography-section {
-    transition: color 0.3s ease;
-    color: #ffffff;
-  }
-  
+}
+
+.hero-image {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+
+}
+
+.hero-content {
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  max-width: 800px;
+  padding: 20px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  margin-top: 10px;
+
+}
 
 
+/* SKILLS */
+.skills-section .skill-card {
+  background-color: #101010;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-section .skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* BIOGRAPHY */
+.biography-section .biography-text {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.biography-section {
+  transition: color 0.3s ease;
+  color: #ffffff;
+}
+
+/* GALLERY */
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+/* INDRO SECTION */
+.intro-section {
+  position: relative;
+
+}
+
+.intro-image {
+  width: 100%;
+  height: auto;
+
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+
+}
+
+.intro-title {
+  font-size: 2rem; 
+}
+
+.intro-description {
+  font-size: 1rem; 
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 1.75rem; 
+  }
+
+  .intro-description {
+    font-size: 0.875rem; 
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-section {
+    display: none;
+  }
+}

@@ -1,22 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import aldenSkywalker from '../assets/Aboutposter.jpg';
 import './about.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Card from 'react-bootstrap/Card';
+import skywalkerAction from '../assets/skywalker_action.jpg'
+import skywalkerPose from '../assets/skywalker_pose.jpg'
+import skywalkerStill from '../assets/skywalker_still.jpg'
+import skywalkerWide from '../assets/skywalker_wide.jpg'
+import { motion, useAnimation } from 'framer-motion';
+
 
 function About() {
-  const skillSet =[
-    { title: 'Strength', value: 75 },
-    { title: 'Intelligence', value: 99 },
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
+  const skillSet = [
+    { title: 'Strength', value: 85 },
+    { title: 'Intelligence', value: 95 },
     { title: 'Speed', value: 90 },
-    { title: 'Fighting Skills', value: 80 },
+    { title: 'Fighting Skills', value: 88 },
   ]
+  const galleryImages = [{ picture: skywalkerAction }, { picture: skywalkerPose }, { picture: skywalkerStill }, { picture: skywalkerWide }]
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        controls.start({
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.75 }
+        });
+      }, 1000); 
+
+      return () => clearTimeout(timer);
+    } else {
+      controls.start({
+        opacity: 0,
+        y: 50,
+        transition: { duration: 0.75 }
+      });
+    }
+  }, [isVisible, controls]);
+
   return (
     <>
 
       {/* Hero Section */}
-
       <section className="hero-section position-relative">
         <img
           src={aldenSkywalker}
@@ -31,9 +76,32 @@ function About() {
         </div>
       </section>
 
+      <section className="intro-section position-relative">
+      <img
+        src="https://pixelz.cc/wp-content/uploads/2018/07/star-wars-battlefront-2-kylo-ren-uhd-4k-wallpaper.jpg"
+        alt="Alden Skywalker Intro"
+        className="intro-image"
+      />
+      <motion.div className="intro-overlay d-flex flex-column justify-content-center align-items-start" animate={controls}>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-8 col-lg-6">
+              <h3 className="intro-title">Alden Skywalker</h3>
+              <p className="intro-description">
+                Alden Skywalker is a legendary Jedi renowned for his extraordinary mastery of the Force and unwavering dedication to justice. Rising from a challenging past, he has become a symbol of hope and courage, using his remarkable skills to protect the galaxy and fight against evil. His journey from a humble beginning to a revered Jedi Knight showcases his resilience and commitment to the greater good.
+              </p>
+              <p className="intro-description">
+                As a mentor and protector, Alden is deeply committed to guiding the next generation of heroes and resolving conflicts with empathy and strength. His legacy is built on acts of bravery and compassion, making him a beacon of light and a true champion for those in need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+
       {/* Skills Section */}
       <section className="skills-section mt-5 container">
-      <h4 className="text-warning text-center mb-5 fw-bold">Mastery Levels</h4>
+        <h4 className="text-warning text-center mb-5 fw-bold">Mastery Levels</h4>
         <div className="row">
           {skillSet.map((skill, index) => (
             <div key={index} className="col-md-6 col-lg-3 mb-4">
@@ -42,7 +110,7 @@ function About() {
                   value={skill.value}
                   text={`${skill.value}%`}
                   styles={buildStyles({
-                    pathColor: '#FFD700', 
+                    pathColor: '#FFD700',
                     textColor: '#FFD700',
                     trailColor: '#2C2C2C',
                     backgroundColor: '#101010',
@@ -72,6 +140,24 @@ function About() {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section className=" container my-5">
+        <h4 className="text-center text-warning mb-5 fw-bold">Gallery</h4>
+        <div className="gallery-grid">
+          {galleryImages.map((image, index) => (
+            <Card key={index} className="gallery-card ">
+              <Card.Img
+                variant="top"
+                src={image.picture}
+                className="gallery-image h-100"
+                alt={`Gallery Image ${index + 1}`}
+              />
+            </Card>
+          ))}
+        </div>
+      </section>
+
     </>
   );
 }
