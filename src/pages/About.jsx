@@ -22,8 +22,6 @@ function About() {
   ]
   const galleryImages = [{ picture: skywalkerAction }, { picture: skywalkerPose }, { picture: skywalkerStill }, { picture: skywalkerWide }]
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -87,7 +85,7 @@ function About() {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-8 col-lg-6">
-                <h3 className="intro-title">Alden Skywalker</h3>
+                <h3 className="intro-title text-warning">Alden Skywalker</h3>
                 <p className="intro-description">
                   Alden Skywalker is a legendary Jedi renowned for his extraordinary mastery of the Force and unwavering dedication to justice. Rising from a challenging past, he has become a symbol of hope and courage, using his remarkable skills to protect the galaxy and fight against evil. His journey from a humble beginning to a revered Jedi Knight showcases his resilience and commitment to the greater good.
                 </p>

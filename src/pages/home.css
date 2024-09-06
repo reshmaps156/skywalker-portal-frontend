@@ -1,0 +1,44 @@
+
+/* SUPER POWER */
+.superpowers-section {
+    background: #0a0a0a; 
+    padding: 60px 0;
+}
+
+.superpowers-section h3 {
+    color: #e0e0e0;
+    letter-spacing: 2px;
+}
+
+.power-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.power-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.power-card h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.power-card p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+
+
+
