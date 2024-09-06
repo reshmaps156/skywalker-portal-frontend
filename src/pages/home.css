@@ -18,11 +18,6 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-.power-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-}
-
 .power-card h4 {
     color: #fff;
     font-size: 1.2rem;
@@ -33,11 +28,54 @@
     color: #bbb;
     font-size: 0.9rem;
 }
+/* INDRO SECTION */
 
-.container {
-    max-width: 1200px;
+
+.intro-image {
+  width: 100%;
+  height: auto;
+
 }
 
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+
+}
+
+.intro-title {
+  font-size: 2rem; 
+}
+
+.intro-description {
+  font-size: 1rem; 
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 1.75rem; 
+  }
+
+  .intro-description {
+    font-size: 0.875rem; 
+  }
+}
+
+@media (max-width: 576px) {
+    .intro-image {
+    display: none;
+  }
+  .intro-overlay{
+    position:unset ;
+  }
+}
 
 
 
