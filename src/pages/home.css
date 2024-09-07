@@ -113,5 +113,33 @@
     opacity: 0.2;
   }
   
-
+  
+  /* News letter */
+  .stay-connected-section {
+    background-color: #202020;
+    color: #f1f1f1;
+    padding: 60px 0;
+  }
+  
  
+  .section-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin:  auto ;
+    color: #b3b3b3;
+  }
+  
+  .newsletter-form {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .newsletter-form .form-control {
+    border-radius: 0;
+    border: 1px solid #555;
+    background: #2c2c2c;
+    color: #f1f1f1;
+  }
+  
+

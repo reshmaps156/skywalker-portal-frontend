@@ -4,8 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 import skywalkerImage from '../assets/skywalker-image.png'
 import './home.css'
 import { motion, useAnimation } from 'framer-motion';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -131,6 +131,28 @@ function Home() {
                     </motion.div>
                 </div>
             </section>
+            {/* Purpose */}
+            <section class=" py-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <motion.div class="col-lg-6 mt-5" initial={{ x: '-20%' }} whileInView={{ x: 0 }} exit={{ x: '20%' }} transition={{ duration: 2 }}>
+
+                            <img src="https://clipart-library.com/images_k/star-wars-silhouette-art/star-wars-silhouette-art-24.png" alt="Purpose Image" class="img-fluid" />
+                        </motion.div>
+                        <motion.div class="col-lg-6 mt-5" initial={{ y: "50%" }} whileInView={{ y: '0' }} exit={{ y: '-50%' }} transition={{ duration: 1 }}>
+                            <h2 class="display-4">Purpose of Our Grievance Platform</h2>
+                            <p >
+                                Our platform is dedicated to providing a voice to those who feel unheard.
+                                By bridging the gap between superheroes and the community, we aim to resolve
+                                grievances swiftly and fairly. Whether it's a concern, a suggestion, or a
+                                complaint, your input helps us build a safer and better environment for everyone.
+                            </p>
+                            <a class="btn btn-outline-warning rounded-0 py-2 mt-3">File a Grievance</a>
+                        </motion.div>
+
+                    </div>
+                </div>
+            </section>
 
             {/* Super powers */}
             <section className="superpowers-section text-white text-center py-5">
@@ -153,9 +175,9 @@ function Home() {
                     </div>
                 </div>
             </section>
-
+            {/* testimonial */}
             <section className=' p-5'>
-                <h1 className='text-center mb-4 display-4'>Testimonials</h1>
+                <h1 className='text-center mb-5 display-4'>What People Say</h1>
                 <div className='row justify-content-center'>
                     {testimonials.map((testimonial) => (
                         <motion.div
@@ -176,15 +198,34 @@ function Home() {
                                     <h5 className='m-0'>{testimonial.name}</h5>
                                 </div>
                                 <p className='testimonial-text'>{testimonial.text}</p>
-                              
+
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </section>
 
-            
 
+            {/* News Letter */}
+            <motion.section className="stay-connected-section py-5" initial={{opacity:'0.5'}} whileInView={{opacity:1}}>
+                <div className="container text-center">
+                    <motion.h2 className=" mb-3 display-4" initial={{x:'-20%'}} whileInView={{x:'0'}} exit={{x:'20%'}} transition={{duration:2}}>Stay Connected</motion.h2>
+                    <motion.p className="section-subtitle mb-4 " initial={{x:'20%'}} whileInView={{x:'0'}} exit={{x:'-20%'}} transition={{duration:2}}>
+                        Keep up with the latest updates, events, and community news. Sign up for our newsletter and follow us on social media to stay in the loop.
+                    </motion.p>
+                    <form className="newsletter-form mb-4">
+                        <input
+                            type="email"
+                            className="form-control"
+                            placeholder="Enter your email"
+                        />
+                        <button className="btn btn-outline-warning rounded-0 ms-2">
+                            Subscribe
+                        </button>
+                    </form>
+
+                </div>
+            </motion.section>
 
         </>
     )
