@@ -8,6 +8,7 @@ import skywalkerAction from '../assets/skywalker_action.jpg'
 import skywalkerPose from '../assets/skywalker_pose.jpg'
 import skywalkerStill from '../assets/skywalker_still.jpg'
 import skywalkerWide from '../assets/skywalker_wide.jpg'
+import { motion } from 'framer-motion';
 
 
 
@@ -33,10 +34,10 @@ function About() {
           className="hero-image"
         />
         <div className="hero-content position-absolute text-center">
-          <h2 className="hero-title text-warning">Alden Skywalker</h2>
-          <p className="hero-tagline">
+          <motion.h2 className="hero-title text-warning" initial={{x:'-20%'}} whileInView={{x:'0'}} exit={{x:'20%'}} transition={{duration:1}}>Alden Skywalker</motion.h2>
+          <motion.p className="hero-tagline"  initial={{y:'50%'}} whileInView={{y:'0'}} exit={{y:'-50%'}} transition={{duration:1}}>
             Rising from the Shadows to Legendary Jedi, Alden Skywalker's mastery of the Force and unyielding sense of justice make him a protector of the people.
-          </p>
+          </motion.p>
         </div>
       </section>
 
