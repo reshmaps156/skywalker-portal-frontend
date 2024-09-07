@@ -101,7 +101,7 @@ function Home() {
                     </Col>
 
                     <Col md={6} sm={12} className='mt-5 d-flex align-items-center justify-content-center '>
-                        <img src={skywalkerImage} alt="" className='w-100' />
+                        <img src={skywalkerImage} alt="" className='img-fluid' />
                     </Col>
                 </Row>
             </section>
@@ -131,6 +131,7 @@ function Home() {
                     </motion.div>
                 </div>
             </section>
+
             {/* Purpose */}
             <section class=" py-5">
                 <div class="container">
@@ -175,6 +176,7 @@ function Home() {
                     </div>
                 </div>
             </section>
+
             {/* testimonial */}
             <section className=' p-5'>
                 <h1 className='text-center mb-5 display-4'>What People Say</h1>
@@ -205,12 +207,11 @@ function Home() {
                 </div>
             </section>
 
-
             {/* News Letter */}
-            <motion.section className="stay-connected-section py-5" initial={{opacity:'0.5'}} whileInView={{opacity:1}}>
+            <motion.section className="stay-connected-section py-5" initial={{ opacity: '0.5' }} whileInView={{ opacity: 1 }}>
                 <div className="container text-center">
-                    <motion.h2 className=" mb-3 display-4" initial={{x:'-20%'}} whileInView={{x:'0'}} exit={{x:'20%'}} transition={{duration:2}}>Stay Connected</motion.h2>
-                    <motion.p className="section-subtitle mb-4 " initial={{x:'20%'}} whileInView={{x:'0'}} exit={{x:'-20%'}} transition={{duration:2}}>
+                    <motion.h2 className=" mb-3 display-4" initial={{ x: '-20%' }} whileInView={{ x: '0' }} exit={{ x: '20%' }} transition={{ duration: 2 }}>Stay Connected</motion.h2>
+                    <motion.p className="section-subtitle mb-4 " initial={{ x: '20%' }} whileInView={{ x: '0' }} exit={{ x: '-20%' }} transition={{ duration: 2 }}>
                         Keep up with the latest updates, events, and community news. Sign up for our newsletter and follow us on social media to stay in the loop.
                     </motion.p>
                     <form className="newsletter-form mb-4">
