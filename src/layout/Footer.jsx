@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { faFacebook, faInstagram, faThreads, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 
+
 function Footer() {
     return (
         <footer className=' text-secondary p-5'>
@@ -17,13 +18,15 @@ function Footer() {
                         </div>
                         <p style={{ textAlign: 'justify' }}>Your gateway to the Force, where justice and peace are upheld. Discover more about Alden Skywalker and stay updated with the latest news and insights</p>
                     </div>
+
+                    {/* Links */}
                     <div className="col-md-1"></div>
                     <div className='col-md-3 p-3'>
                         <h5 className='text-warning mb-3'>Quick Links</h5>
                         <ul className='list-unstyled'>
                             <li className='mb-2'><a href='/' className='text-secondary text-decoration-none '>Home</a></li>
-                            <li className='mb-2'><a href='/about' className='text-secondary text-decoration-none'>About</a></li>
-                            <li className='mb-2'><a href='/login' className='text-secondary text-decoration-none'>Login</a></li>
+                            <li className='mb-2'><a href='/about' className='text-secondary text-decoration-none '> About</a></li>
+                            <li className='mb-2'><a href='/grievance' className='text-secondary text-decoration-none'>Concerns</a></li>
                             <li className='mb-2'><a href='/contact' className='text-secondary text-decoration-none'>Contact Us</a></li>
                         </ul>
                     </div>
@@ -46,6 +49,8 @@ function Footer() {
                         </a>
                     </div>
                 </div>
+
+                {/* Copy right section */}
                 <div className='row mt-4'>
                     <div className='col-12 text-center'>
                         <p className='text-secondary mb-0'>Copyright © {new Date().getFullYear()}  Skywalker. All rights reserved.</p>
