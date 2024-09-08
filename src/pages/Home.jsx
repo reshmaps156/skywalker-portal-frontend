@@ -4,8 +4,9 @@ import { Col, Row } from 'react-bootstrap'
 import skywalkerImage from '../assets/skywalker-image.png'
 import './home.css'
 import { motion, useAnimation } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
 
 
 
@@ -27,18 +28,21 @@ function Home() {
             name: 'Sheldon Cooper',
             text: "I've never experienced such an efficient grievance process. Skywalker's approach is both compassionate and effective. I'm truly grateful for the help I received.",
             image: 'https://beatlemedo.wordpress.com/wp-content/uploads/2013/04/jim_parsons_by_ninaavdeenko.jpg',
+            value:4.5
         },
         {
             id: 2,
             name: ' Bernadette',
             text: "Skywalker helped me resolve my issue faster than I could have imagined. The process was smooth, and I felt heard throughout the entire experience.",
             image: 'https://retroeyeworks.wordpress.com/wp-content/uploads/2014/06/635127684105530000.jpg',
+            value:5
         },
         {
             id: 3,
             name: 'George Cooper',
             text: "From start to finish, the entire process was seamless. I felt supported, and my issue was resolved promptly. Skywalker's team is top-notch!",
             image: 'https://ntvb.tmsimg.com/assets/assets/1046299_v9_bc.jpg',
+            value:5
         },
     ];
 
@@ -199,6 +203,10 @@ function Home() {
                                     />
                                     <h5 className='m-0'>{testimonial.name}</h5>
                                 </div>
+                                <Stack spacing={1}>
+    
+      <Rating name="half-rating-read" defaultValue={testimonial.value} precision={0.5} readOnly />
+    </Stack>
                                 <p className='testimonial-text'>{testimonial.text}</p>
 
                             </div>
