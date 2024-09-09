@@ -6,6 +6,7 @@ import './home.css'
 import { motion, useAnimation } from 'framer-motion';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom'
 
 
 
@@ -97,10 +98,12 @@ function Home() {
                             <motion.p className='text-secondary' initial={{ x: '20%' }} whileInView={{ x: 0 }} exit={{ x: '-20%' }} transition={{ duration: 1 }}>
                                 Welcome to Skywalker Portal, where calm and clarity meet. Here, your voice is a powerful tool for creating a harmonious world. Share your thoughts and concerns in a space designed for understanding and support.
                             </motion.p>
-
-                            <motion.button className='btn btn-outline-warning mt-3 rounded-0 py-2' initial={{ y: '100%' }} whileInView={{ y: 0 }} exit={{ y: '-100%' }} transition={{ duration: 1 }}>
-                                File a Grievance
-                            </motion.button>
+                            <Link to={'/grievance'}>
+                                <motion.button className='btn btn-outline-warning mt-3 rounded-0 py-2' initial={{ y: '100%' }} whileInView={{ y: 0 }} exit={{ y: '-100%' }} transition={{ duration: 1 }}>
+                                    Get started
+                                </motion.button>
+                            </Link>
+                            
                         </div>
                     </Col>
 
@@ -129,10 +132,16 @@ function Home() {
                                     <p className="intro-description">
                                         As a mentor and protector, Alden is deeply committed to guiding the next generation of heroes and resolving conflicts with empathy and strength. His legacy is built on acts of bravery and compassion, making him a beacon of light and a true champion for those in need.
                                     </p>
+                                    <a href='/about'>
+                                <button className='btn btn-outline-warning mt-3 rounded-0 py-2'>
+                                    About me
+                                </button>
+                            </a>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
+                    
                 </div>
             </section>
 
@@ -152,7 +161,7 @@ function Home() {
                                 grievances swiftly and fairly. Whether it's a concern, a suggestion, or a
                                 complaint, your input helps us build a safer and better environment for everyone.
                             </p>
-                            <a class="btn btn-outline-warning rounded-0 py-2 mt-3">File a Grievance</a>
+                            <a href='/grievance'><button class="btn btn-outline-warning rounded-0 py-2 mt-3">File a Grievance</button></a >
                         </motion.div>
 
                     </div>
