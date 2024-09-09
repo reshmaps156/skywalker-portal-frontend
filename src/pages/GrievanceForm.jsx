@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import TextField from '@mui/material/TextField';
 import { motion } from 'framer-motion';
 import globe from '../assets/glob.mp4';
+import { grievanceSubmitApi } from '../services/api';
 
 function GrievanceForm() {
   
@@ -37,21 +38,21 @@ function GrievanceForm() {
     if (field === 'mobileNumber') validateMobile(value);
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm =async () => {
     const { username, email, mobileNumber, subject, grievanceDetails } = formDetails;
 
     // Check for empty fields
     if (!username || !email || !mobileNumber || !subject || !grievanceDetails) {
       alert('Fill out the form to continue');
-      return;
+      
     }
 
    
     if (!emailError && !mobileError) {
       setIsValidate(true);
-      alert('Form submitted successfully!');
-    
-
+      const result = await grievanceSubmitApi(formDetails)
+      console.log(result);
+      
       setFormDetails({
         username: '',
         email: '',
