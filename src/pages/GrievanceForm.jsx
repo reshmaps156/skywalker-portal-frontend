@@ -6,20 +6,19 @@ import globe from '../assets/glob.mp4';
 import { grievanceSubmitApi } from '../services/api';
 
 function GrievanceForm() {
-  
+
   const [formDetails, setFormDetails] = useState({
     username: '',
     email: '',
     mobileNumber: '',
     subject: '',
     grievanceDetails: '',
-    submitTime:''
+    submitTime: ''
   });
-  
   const [emailError, setEmailError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
   const [isValidate, setIsValidate] = useState(false);
-  
+
   const validateEmail = (email) => {
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     setEmailError(!isValidEmail);
@@ -29,7 +28,7 @@ function GrievanceForm() {
   const validateMobile = (mobile) => {
     const isValidNumber = /^\d{10}$/.test(mobile);
     setMobileError(!isValidNumber);
-    return isValidNumber ;
+    return isValidNumber;
   };
 
   const handleChange = (field, value) => {
@@ -39,31 +38,38 @@ function GrievanceForm() {
     if (field === 'mobileNumber') validateMobile(value);
   };
 
-  const handleSubmitForm =async () => {
-    const { username, email, mobileNumber, subject, grievanceDetails} = formDetails;
-
+  const handleSubmitForm = async () => {
+    const { username, email, mobileNumber, subject, grievanceDetails } = formDetails;
+    
     // Check for empty fields
     if (!username || !email || !mobileNumber || !subject || !grievanceDetails) {
       alert('Fill out the form to continue');
-      
-    }else{
+
+    } else {
       if (!emailError && !mobileError) {
         setIsValidate(true);
         const submissionTime = new Date().toISOString();
-        
+
         //adding the time of submission to the request body
         const reqBody = { ...formDetails, submitTime: submissionTime };
-        
-        const result = await grievanceSubmitApi(reqBody)
-        console.log(result);
-        
+
+        try {
+          const response = await grievanceSubmitApi(reqBody)
+          console.log(response);
+          if(response?.status==201){
+            alert('Request submitted')
+          }
+        } catch (error) {
+          console.error("Error during form submission:", error);
+          alert('Failed to submit grievance. Please try again.');
+        }
         setFormDetails({
           username: '',
           email: '',
           mobileNumber: '',
           subject: '',
           grievanceDetails: '',
-          submitTime:''
+          submitTime: ''
         })
       } else {
         setIsValidate(false);
@@ -71,8 +77,8 @@ function GrievanceForm() {
       }
     }
 
-   
-   
+
+
   };
 
   return (
