@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import TextField from '@mui/material/TextField';
 import { motion } from 'framer-motion';
@@ -12,7 +12,8 @@ function GrievanceForm() {
     email: '',
     mobileNumber: '',
     subject: '',
-    grievanceDetails: ''
+    grievanceDetails: '',
+    submitTime:''
   });
   
   const [emailError, setEmailError] = useState(false);
@@ -39,31 +40,39 @@ function GrievanceForm() {
   };
 
   const handleSubmitForm =async () => {
-    const { username, email, mobileNumber, subject, grievanceDetails } = formDetails;
+    const { username, email, mobileNumber, subject, grievanceDetails} = formDetails;
 
     // Check for empty fields
     if (!username || !email || !mobileNumber || !subject || !grievanceDetails) {
       alert('Fill out the form to continue');
       
+    }else{
+      if (!emailError && !mobileError) {
+        setIsValidate(true);
+        const submissionTime = new Date().toISOString();
+        
+        //adding the time of submission to the request body
+        const reqBody = { ...formDetails, submitTime: submissionTime };
+        
+        const result = await grievanceSubmitApi(reqBody)
+        console.log(result);
+        
+        setFormDetails({
+          username: '',
+          email: '',
+          mobileNumber: '',
+          subject: '',
+          grievanceDetails: '',
+          submitTime:''
+        })
+      } else {
+        setIsValidate(false);
+        alert('Please correct the errors before submitting');
+      }
     }
 
    
-    if (!emailError && !mobileError) {
-      setIsValidate(true);
-      const result = await grievanceSubmitApi(formDetails)
-      console.log(result);
-      
-      setFormDetails({
-        username: '',
-        email: '',
-        mobileNumber: '',
-        subject: '',
-        grievanceDetails: ''
-      })
-    } else {
-      setIsValidate(false);
-      alert('Please correct the errors before submitting');
-    }
+   
   };
 
   return (
