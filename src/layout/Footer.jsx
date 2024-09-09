@@ -26,7 +26,7 @@ function Footer() {
                         <ul className='list-unstyled'>
                             <li className='mb-2'><a href='/' className='text-secondary text-decoration-none '>Home</a></li>
                             <li className='mb-2'><a href='/about' className='text-secondary text-decoration-none '> About</a></li>
-                            <li className='mb-2'><a href='/grievance' className='text-secondary text-decoration-none'>Concerns</a></li>
+                            <li className='mb-2'><a href='/grievance' className='text-secondary text-decoration-none'>Grievances</a></li>
                             <li className='mb-2'><a href='/contact' className='text-secondary text-decoration-none'>Contact Us</a></li>
                         </ul>
                     </div>
