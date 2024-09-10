@@ -41,11 +41,21 @@ function About() {
         </div>
       </section>
 
-     
+       {/*Mission  */}
+       <section className='container mt-5'>
+        <div className="row">
+          <div className="col-md-1"></div>
+          <div className="col-md-10">
+          <h4 className='text-warning text-center my-5 display-5 '>Mission</h4>
+          <p style={{textAlign:'justify'}}>To protect the rights of every individual, support those in need, and listen to their voices with unwavering dedication. Our mission is to empower administrators to act with integrity, ensuring that every grievance is heard, every problem is addressed, and every action taken reflects our commitment to justice and fairness. We stand as guardians of the community, striving to create a safe and supportive environment where every concern leads to meaningful change.</p>
+          </div>
+          <div className="col-md-1"></div>
+        </div>
+       </section>
 
       {/* Skills Section */}
       <section className="skills-section mt-5 container">
-        <h4 className="text-warning text-center mb-5 fw-bold">Mastery Levels</h4>
+        <h4 className="text-warning text-center mb-5 display-5">Mastery Levels</h4>
         <div className="row">
           {skillSet.map((skill, index) => (
             <div key={index} className="col-md-6 col-lg-3 mb-4">
@@ -71,7 +81,7 @@ function About() {
       <section className="biography-section container my-5">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
-            <h2 className="text-warning text-center mb-4">Biography</h2>
+            <h4 className="text-warning text-center mb-4  display-5">Biography</h4>
             <p className="text-secondary mb-4 fs-5 biography-text">
               Born on a remote and humble planet, Alden Skywalker's early life was shaped by adversity and isolation. Orphaned as a child, he was raised in obscurity until he was discovered by a Jedi Master who recognized his extraordinary potential. This pivotal moment set Alden on a transformative journey from a life of hardship to becoming a revered Jedi Knight. His path to becoming a Jedi was marked by intense training and dedication. Under the guidance of the Jedi Order, Alden mastered the ways of the Force, developing skills in combat, diplomacy, and wisdom. His training was rigorous, honing his innate abilities and instilling in him a deep sense of responsibility and justice.
             </p>
@@ -87,7 +97,7 @@ function About() {
 
       {/* Gallery Section */}
       <section className=" container my-5">
-        <h4 className="text-center text-warning mb-5 fw-bold">Gallery</h4>
+        <h4 className="text-center text-warning mb-5 display-5">Gallery</h4>
         <div className="gallery-grid">
           {galleryImages.map((image, index) => (
             <Card key={index} className="gallery-card ">
