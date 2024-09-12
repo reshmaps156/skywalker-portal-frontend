@@ -5,3 +5,4 @@ import { serverUrl } from "./serverUrl"
 export const grievanceSubmitApi = async(reqBody)=>{
    return await commonApi('POST',`${serverUrl}/grievances`,reqBody)
 }
+

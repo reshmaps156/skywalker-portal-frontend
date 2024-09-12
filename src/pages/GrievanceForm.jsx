@@ -193,7 +193,7 @@ function GrievanceForm() {
                       }}
                    
                     >
-                       <MenuItem value={'High'}>High</MenuItem>
+                       <MenuItem value={'High'} >High</MenuItem>
                         <MenuItem value={"Medium"}>Medium</MenuItem>
                         <MenuItem value={'Low'}>Low</MenuItem>
                     </TextField>
