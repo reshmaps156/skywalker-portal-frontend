@@ -6,17 +6,21 @@ import globe from '../assets/glob.mp4';
 import { grievanceSubmitApi } from '../services/api';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MenuItem from '@mui/material/MenuItem';
+
 
 function GrievanceForm() {
-
   const [formDetails, setFormDetails] = useState({
     username: '',
     email: '',
     mobileNumber: '',
     subject: '',
+    priority: '',
     grievanceDetails: '',
     submitTime: ''
   });
+  
+  
   const [emailError, setEmailError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
   const [isValidate, setIsValidate] = useState(false);
@@ -82,6 +86,7 @@ function GrievanceForm() {
 
   };
 
+
   return (
     <>
       <section style={{ backgroundColor: '#000000' }}>
@@ -96,7 +101,7 @@ function GrievanceForm() {
           </motion.h1>
           <motion.p
             style={{ color: 'grey' }}
-            className="text-center mb-3"
+            className="text-center mb-1 text-secondary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -113,8 +118,8 @@ function GrievanceForm() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="my-3 d-flex flex-column px-3">
-                    <label className="mb-1" for='name'>Name</label>
+                  <div className="mb-2 d-flex flex-column px-5">
+                    <label className="mb-1 text-secondary" for='name'>Name</label>
                     <TextField
                       id='name'
                       variant="standard"
@@ -125,8 +130,8 @@ function GrievanceForm() {
                       onChange={(e) => handleChange('username', e.target.value)}
                     />
                   </div>
-                  <div className="my-3 d-flex flex-column px-3">
-                    <label className="mb-1" for='mail'>Email</label>
+                  <div className="mb-2 d-flex flex-column px-5">
+                    <label className="mb-1 text-secondary" for='mail'>Email</label>
                     <TextField
                       id='mail'
                       required
@@ -140,8 +145,8 @@ function GrievanceForm() {
                       onChange={(e) => handleChange('email', e.target.value)}
                     />
                   </div>
-                  <div className="my-3 d-flex flex-column px-3">
-                    <label className="mb-1" for='mob'>Mobile</label>
+                  <div className="mb-2 d-flex flex-column px-5">
+                    <label className="mb-1 text-secondary" for='mob'>Mobile</label>
                     <TextField
                       id='mob'
                       required
@@ -155,20 +160,49 @@ function GrievanceForm() {
                       onChange={(e) => handleChange('mobileNumber', e.target.value)}
                     />
                   </div>
-                  <div className="my-3 d-flex flex-column px-3">
-                    <label className="mb-1" for='sub'>Subject</label>
+                  <div className="mb-2 d-flex flex-column px-5">
+                    <label className="mb-1 text-secondary " for='sub' >Subject</label>
                     <TextField
                       id='sub'
                       variant="standard"
                       color="warning"
+                      // label="subject"
                       focused
                       sx={{ input: { color: 'white' } }}
                       value={formDetails.subject}
                       onChange={(e) => handleChange('subject', e.target.value)}
                     />
                   </div>
-                  <div className="my-3 d-flex flex-column px-3">
-                    <label className="mb-1" for='issue'>Describe your issue</label>
+                  <div className="mb-2 d-flex flex-column px-5">
+                  <label className="mb-1 text-secondary" for='sub'>Priority</label>
+                    <TextField
+                      id="standard-select-currency"
+                      select
+                      focused
+                      value={formDetails.priority}
+                      variant="standard"
+                      color="warning"
+                      onChange={(e) => handleChange('priority', e.target.value)}
+                      InputProps={{
+                        sx: {
+                          color: 'white',
+                          '& .MuiSvgIcon-root': {
+                            color: 'grey',
+                          }
+                        },
+                      }}
+                   
+                    >
+                       <MenuItem value={'High'}>High</MenuItem>
+                        <MenuItem value={"Medium"}>Medium</MenuItem>
+                        <MenuItem value={'Low'}>Low</MenuItem>
+                    </TextField>
+                  </div>
+
+
+
+                  <div className="mb-2 d-flex flex-column px-5">
+                    <label className="mb-1 text-secondary" for='issue'>Describe your issue</label>
                     <TextField
                       id='issue'
                       variant="standard"
@@ -181,7 +215,7 @@ function GrievanceForm() {
                       onChange={(e) => handleChange('grievanceDetails', e.target.value)}
                     />
                   </div>
-                  <div className='px-3 pb-3 mt-4'>
+                  <div className='px-5 pb-3 mt-4'>
                     <button className='btn btn-warning w-100' type='button' onClick={handleSubmitForm}>Submit</button>
                   </div>
                 </motion.form>
