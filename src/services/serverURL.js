@@ -1,1 +1,1 @@
-export const serverUrl = 'https://skywalker-portal-backend.onrender.com'
+export const serverUrl = 'http://localhost:3000'
