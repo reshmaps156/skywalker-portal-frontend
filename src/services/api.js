@@ -1,5 +1,6 @@
 import { commonApi } from "./commonApi"
-import { serverUrl } from "./serverUrl"
+import { serverUrl } from "./serverURL"
+
 
 //api to submit grievances
 export const grievanceSubmitApi = async(reqBody)=>{
