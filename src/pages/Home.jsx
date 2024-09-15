@@ -15,8 +15,8 @@ import Chatbot from '../components/Chatbot'
 function Home() {
     const controls = useAnimation();
     const [isVisible, setIsVisible] = useState(false);
-    const [openChatbot,setOpenChatBot] = useState(false)
-    const toggleBot = ()=>{
+    const [openChatbot, setOpenChatBot] = useState(false)
+    const toggleBot = () => {
         setOpenChatBot(!openChatbot)
     }
     const superpowers = [
@@ -108,7 +108,7 @@ function Home() {
                                     Get started
                                 </motion.button>
                             </Link>
-                            
+
                         </div>
                     </Col>
 
@@ -117,12 +117,12 @@ function Home() {
                     </Col>
                 </Row>
                 {
-                    openChatbot && <div  className='position-fixed border p-2 rounded-2 d-flex align-items-end flex-column'  style={{bottom:'10%',zIndex:1,right:'10%',backgroundColor:'#0f0f0f'}}>
-                       <button className='btn' onClick={toggleBot}><FontAwesomeIcon icon={faXmark} size='xl'  /></button>
-                        <Chatbot/>
-                        </div>
+                    openChatbot && <div className='position-fixed border p-2 rounded-2 d-flex align-items-end flex-column' style={{ bottom: '10%', zIndex: 1, right: '10%', backgroundColor: '#0f0f0f' }}>
+                        <button className='btn' onClick={toggleBot}><FontAwesomeIcon icon={faXmark} size='xl' /></button>
+                        <Chatbot />
+                    </div>
                 }
-                <button className='btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot} style={{left:'93%',top:'85%',zIndex:'1'}}><FontAwesomeIcon icon={faHeadset} size='xl'/></button>
+                <button className='btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot} style={{ left: '93%', top: '85%', zIndex: '1' }}><FontAwesomeIcon icon={faHeadset} size='xl' /></button>
             </section>
 
             {/* Indro Section */}
@@ -144,16 +144,16 @@ function Home() {
                                     <p className="intro-description">
                                         As a mentor and protector, Alden is deeply committed to guiding the next generation of heroes and resolving conflicts with empathy and strength. His legacy is built on acts of bravery and compassion, making him a beacon of light and a true champion for those in need.
                                     </p>
-                                    <a href='/about'>
-                                <button className='btn btn-outline-warning mt-3 rounded-0 py-2'>
-                                    About me
-                                </button>
-                            </a>
+                                    <Link to={'/about'}>
+                                        <button className='btn btn-outline-warning mt-3 rounded-0 py-2'>
+                                            About me
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
-                    
+
                 </div>
             </section>
 
@@ -173,7 +173,7 @@ function Home() {
                                 grievances swiftly and fairly. Whether it's a concern, a suggestion, or a
                                 complaint, your input helps us build a safer and better environment for everyone.
                             </p>
-                            <a href='/grievance'><button class="btn btn-outline-warning rounded-0 py-2 mt-3">File a Grievance</button></a >
+                            <Link to={'/grievance'}><button class="btn btn-outline-warning rounded-0 py-2 mt-3">File a Grievance</button></Link >
                         </motion.div>
 
                     </div>
@@ -256,8 +256,8 @@ function Home() {
 
                 </div>
             </motion.section>
-            
-          
+
+
         </>
     )
 }

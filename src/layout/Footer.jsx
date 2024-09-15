@@ -3,6 +3,7 @@ import { faJedi } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { faFacebook, faInstagram, faThreads, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,29 +25,29 @@ function Footer() {
                     <div className='col-md-3 p-3'>
                         <h5 className='text-warning mb-3'>Quick Links</h5>
                         <ul className='list-unstyled'>
-                            <li className='mb-2'><a href='/' className='text-secondary text-decoration-none '>Home</a></li>
-                            <li className='mb-2'><a href='/about' className='text-secondary text-decoration-none '> About</a></li>
-                            <li className='mb-2'><a href='/grievance' className='text-secondary text-decoration-none'>Grievances</a></li>
-                            <li className='mb-2'><a href='/contact' className='text-secondary text-decoration-none'>Contact Us</a></li>
+                            <li className='mb-2'><Link to={'/'} className='text-secondary text-decoration-none '>Home</Link></li>
+                            <li className='mb-2'><Link to={'/about'} className='text-secondary text-decoration-none '> About</Link></li>
+                            <li className='mb-2'><Link to={'/grievance'} className='text-secondary text-decoration-none'>Grievances</Link></li>
+                            <li className='mb-2'><Link to={'/contact'} className='text-secondary text-decoration-none'>Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className='col-md-4 p-3'>
                         <h5 className='text-warning mb-3'>Follow Us</h5>
-                        <a className='text-secondary me-3'>
+                        <Link className='text-secondary me-3'>
                             <FontAwesomeIcon icon={faFacebook} size='xl' />
-                        </a>
-                        <a className='text-secondary me-3'>
+                        </Link>
+                        <Link className='text-secondary me-3'>
                             <FontAwesomeIcon icon={faXTwitter} size='xl' />
-                        </a>
-                        <a className='text-secondary  me-3'>
+                        </Link>
+                        <Link className='text-secondary  me-3'>
                             <FontAwesomeIcon icon={faInstagram} size='xl' />
-                        </a>
-                        <a className='text-secondary  me-3'>
+                        </Link>
+                        <Link className='text-secondary  me-3'>
                             <FontAwesomeIcon icon={faYoutube} size='xl' />
-                        </a>
-                        <a className='text-secondary  me-3'>
+                        </Link>
+                        <Link className='text-secondary  me-3'>
                             <FontAwesomeIcon icon={faThreads} size='xl' />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
