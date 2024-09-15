@@ -30,7 +30,7 @@ const Chatbot = () => {
 
   const fetchDialogflowResponse = async (message) => {
     const sessionId = Date.now();
-    const accessToken = await getNewTokenApi(); // Ensure this is awaited properly
+    const accessToken = await getNewTokenApi(); 
     const token = accessToken.data.token
     
     const dialogflowURL = `https://dialogflow.googleapis.com/v2/projects/superheroagent-wjek/agent/sessions/${sessionId}:detectIntent`;

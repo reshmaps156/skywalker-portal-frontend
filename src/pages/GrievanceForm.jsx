@@ -47,7 +47,7 @@ function GrievanceForm() {
   const handleSubmitForm = async () => {
     const { username, email, mobileNumber, subject, grievanceDetails } = formDetails;
 
-    // Check for empty fields
+    
     if (!username || !email || !mobileNumber || !subject || !grievanceDetails) {
       toast.info('Fill out the form to continue');
 
