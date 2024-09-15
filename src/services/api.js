@@ -5,4 +5,6 @@ import { serverUrl } from "./serverUrl"
 export const grievanceSubmitApi = async(reqBody)=>{
    return await commonApi('POST',`${serverUrl}/grievances`,reqBody)
 }
-
+export const getNewTokenApi = async()=>{
+   return await commonApi('GET',`${serverUrl}/token`)
+}

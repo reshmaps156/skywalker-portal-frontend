@@ -7,13 +7,18 @@ import { motion, useAnimation } from 'framer-motion';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom'
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeadset, faXmark } from '@fortawesome/free-solid-svg-icons'
+import Chatbot from '../components/Chatbot'
 
 
 function Home() {
     const controls = useAnimation();
     const [isVisible, setIsVisible] = useState(false);
+    const [openChatbot,setOpenChatBot] = useState(false)
+    const toggleBot = ()=>{
+        setOpenChatBot(!openChatbot)
+    }
     const superpowers = [
         { title: 'Telekinesis', description: 'Move objects with the mind, handling multiple tasks with ease.' },
         { title: 'Energy Manipulation', description: 'Control and channel energy to create shields, blasts, or heal injuries.' },
@@ -87,7 +92,7 @@ function Home() {
             <Header />
 
             {/* Hero */}
-            <section >
+            <section>
                 <Row className='m-5  p-5' >
                     <Col md={6} sm={12} className='mt-5 d-flex align-items-center justify-content-center'>
                         <div>
@@ -111,6 +116,13 @@ function Home() {
                         <img src={skywalkerImage} alt="" className='img-fluid' />
                     </Col>
                 </Row>
+                {
+                    openChatbot && <div  className='position-fixed border p-2 rounded-2 d-flex align-items-end flex-column'  style={{bottom:'10%',zIndex:1,right:'10%',backgroundColor:'#0f0f0f'}}>
+                       <button className='btn' onClick={toggleBot}><FontAwesomeIcon icon={faXmark} size='xl'  /></button>
+                        <Chatbot/>
+                        </div>
+                }
+                <button className='btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot} style={{left:'93%',top:'85%',zIndex:'1'}}><FontAwesomeIcon icon={faHeadset} size='xl'/></button>
             </section>
 
             {/* Indro Section */}
@@ -244,7 +256,8 @@ function Home() {
 
                 </div>
             </motion.section>
-
+            
+          
         </>
     )
 }
