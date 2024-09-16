@@ -1,37 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { getNewTokenApi } from '../services/api';
 import './chatbot.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([
-    { text: 'Hi! How can I help you?', sender: 'bot' },
-  ]);
-  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([{ text: 'Hi! How can I help you?', sender: 'bot' }]);
+  const [input, setInput] = useState(''); //to store input
+  const messagesEndRef = useRef(null); // Reference to the end of messages container
 
   const handleSendMessage = async () => {
     if (!input.trim()) return;
 
     const userMessage = { text: input, sender: 'user' };
-    setMessages([...messages, userMessage]);
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
       const response = await fetchDialogflowResponse(input);
       const botMessage = { text: response, sender: 'bot' };
-
-      setMessages([...messages, userMessage, botMessage]);
+      setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
     } catch (error) {
       console.error('Error in handleSendMessage:', error);
       const botMessage = { text: 'Sorry, something went wrong. Please try again.', sender: 'bot' };
-      setMessages([...messages, userMessage, botMessage]);
+      setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
     }
+
     setInput('');
   };
 
   const fetchDialogflowResponse = async (message) => {
     const sessionId = Date.now();
     const accessToken = await getNewTokenApi(); 
-    const token = accessToken.data.token
+    const token = accessToken.data.token;
     
     const dialogflowURL = `https://dialogflow.googleapis.com/v2/projects/superheroagent-wjek/agent/sessions/${sessionId}:detectIntent`;
 
@@ -56,8 +58,17 @@ const Chatbot = () => {
     return response.data.queryResult.fulfillmentText;
   };
 
+  // Scroll to the bottom of the message container when new messages are added
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]); // Call scrollToBottom when messages update
+
   return (
-    <div className="chatbot-container" style={{ maxWidth: '300px' }}>
+    <div className="chatbot-container">
       <div className="chatbox">
         <div className="messages">
           {messages.map((msg, index) => (
@@ -65,6 +76,7 @@ const Chatbot = () => {
               {msg.text}
             </div>
           ))}
+          <div ref={messagesEndRef} /> 
         </div>
         <div className="input-container">
           <input
@@ -74,8 +86,8 @@ const Chatbot = () => {
             placeholder="Type a message"
             className="input-field"
           />
-          <button onClick={handleSendMessage} className="send-button">
-            Send
+          <button onClick={handleSendMessage} className="btn btn-warning ms-2">
+          <FontAwesomeIcon icon={faPaperPlane} />
           </button>
         </div>
       </div>

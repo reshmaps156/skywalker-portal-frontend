@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../layout/Header'
 import { Col, Row } from 'react-bootstrap'
 import skywalkerImage from '../assets/skywalker-image.png'
+import skywalkerSilhouette from '../assets/skywalker-silhouette.png'
 import './home.css'
 import { motion, useAnimation } from 'framer-motion';
 import Rating from '@mui/material/Rating';
@@ -117,12 +118,12 @@ function Home() {
                     </Col>
                 </Row>
                 {
-                    openChatbot && <div className='chatbot position-fixed  border p-2 rounded-2 d-flex align-items-end flex-column' >
+                    openChatbot && <div className='chatbot  border p-2 rounded-2 d-flex align-items-end flex-column' >
                         <button className='btn' onClick={toggleBot}><FontAwesomeIcon icon={faXmark} size='xl' /></button>
                         <Chatbot />
                     </div>
                 }
-                <button className='chatBotBtn btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot}><FontAwesomeIcon icon={faHeadset} size='xl' /></button>
+                <button className='chatBotBtn btn btn-outline-secondary rounded-circle p-2' onClick={toggleBot}><FontAwesomeIcon icon={faHeadset} size='xl' /></button>
             </section>
 
             {/* Indro Section */}
@@ -163,7 +164,7 @@ function Home() {
                     <div class="row align-items-center">
                         <motion.div class="col-lg-6 mt-5" initial={{ x: '-20%' }} whileInView={{ x: 0 }} exit={{ x: '20%' }} transition={{ duration: 2 }}>
 
-                            <img src="https://clipart-library.com/images_k/star-wars-silhouette-art/star-wars-silhouette-art-24.png" alt="Purpose Image" class="img-fluid" />
+                            <img src={skywalkerSilhouette} alt="Purpose Image" class="img-fluid" />
                         </motion.div>
                         <motion.div class="col-lg-6 mt-5" initial={{ y: "50%" }} whileInView={{ y: '0' }} exit={{ y: '-50%' }} transition={{ duration: 1 }}>
                             <h2 class="display-4">Purpose of Our Grievance Platform</h2>
