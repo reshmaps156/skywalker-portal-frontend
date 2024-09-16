@@ -1,4 +1,3 @@
-export const serverUrl = 'http://localhost:4000'
+export const serverUrl = 'https://skywalker-portal-backend.onrender.com'
 
 
-//https://skywalker-portal-backend.onrender.com
