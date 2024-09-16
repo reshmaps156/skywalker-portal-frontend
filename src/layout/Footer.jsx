@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
-        <footer className=' text-secondary p-5'>
+        <footer className=' text-secondary w-100 p-5 '>
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-4 p-3'>
@@ -33,20 +33,20 @@ function Footer() {
                     </div>
                     <div className='col-md-4 p-3'>
                         <h5 className='text-warning mb-3'>Follow Us</h5>
-                        <Link className='text-secondary me-3'>
-                            <FontAwesomeIcon icon={faFacebook} size='xl' />
+                        <Link className='text-secondary me-3 '>
+                            <FontAwesomeIcon icon={faFacebook} size='xl'className='mt-3' />
                         </Link>
-                        <Link className='text-secondary me-3'>
-                            <FontAwesomeIcon icon={faXTwitter} size='xl' />
+                        <Link className='text-secondary me-3 '>
+                            <FontAwesomeIcon icon={faXTwitter} size='xl'className='mt-3' />
                         </Link>
-                        <Link className='text-secondary  me-3'>
-                            <FontAwesomeIcon icon={faInstagram} size='xl' />
+                        <Link className='text-secondary  me-3 '>
+                            <FontAwesomeIcon icon={faInstagram} size='xl'className='mt-3' />
                         </Link>
-                        <Link className='text-secondary  me-3'>
-                            <FontAwesomeIcon icon={faYoutube} size='xl' />
+                        <Link className='text-secondary  me-3 '>
+                            <FontAwesomeIcon icon={faYoutube} size='xl' className='mt-3'/>
                         </Link>
-                        <Link className='text-secondary  me-3'>
-                            <FontAwesomeIcon icon={faThreads} size='xl' />
+                        <Link className='text-secondary  me-3 '>
+                            <FontAwesomeIcon icon={faThreads} size='xl'className='mt-3' />
                         </Link>
                     </div>
                 </div>

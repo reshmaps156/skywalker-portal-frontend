@@ -92,9 +92,9 @@ function Home() {
             <Header />
 
             {/* Hero */}
-            <section>
-                <Row className='m-5  p-5' >
-                    <Col md={6} sm={12} className='mt-5 d-flex align-items-center justify-content-center'>
+            <section className='homeSection w-100'>
+                <Row className='m-5  p-5 ' >
+                    <Col md={6} sm={12} className='mt-5 '>
                         <div>
                             <motion.h1 style={{ color: '#D3D3D3' }} initial={{ x: '-20%' }} whileInView={{ x: 0 }} exit={{ x: '20%' }} transition={{ duration: 1 }}>
                                 Skywalker's Light, Your Peaceful Voice
@@ -112,21 +112,21 @@ function Home() {
                         </div>
                     </Col>
 
-                    <Col md={6} sm={12} className='mt-5 d-flex align-items-center justify-content-center '>
+                    <Col md={6} sm={12} className='mt-5 '>
                         <img src={skywalkerImage} alt="" className='img-fluid' />
                     </Col>
                 </Row>
                 {
-                    openChatbot && <div className='position-fixed border p-2 rounded-2 d-flex align-items-end flex-column' style={{ bottom: '10%', zIndex: 1, right: '10%', backgroundColor: '#0f0f0f' }}>
+                    openChatbot && <div className='chatbot position-fixed  border p-2 rounded-2 d-flex align-items-end flex-column' >
                         <button className='btn' onClick={toggleBot}><FontAwesomeIcon icon={faXmark} size='xl' /></button>
                         <Chatbot />
                     </div>
                 }
-                <button className='btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot} style={{ left: '93%', top: '85%', zIndex: '1' }}><FontAwesomeIcon icon={faHeadset} size='xl' /></button>
+                <button className='chatBotBtn btn btn-outline-secondary position-fixed rounded-circle p-2' onClick={toggleBot}><FontAwesomeIcon icon={faHeadset} size='xl' /></button>
             </section>
 
             {/* Indro Section */}
-            <section>
+            <section className='w-100'>
                 <div className=" position-relative">
                     <img
                         src="https://pixelz.cc/wp-content/uploads/2018/07/star-wars-battlefront-2-kylo-ren-uhd-4k-wallpaper.jpg"
@@ -158,7 +158,7 @@ function Home() {
             </section>
 
             {/* Purpose */}
-            <section class=" py-5">
+            <section class=" py-5 ">
                 <div class="container">
                     <div class="row align-items-center">
                         <motion.div class="col-lg-6 mt-5" initial={{ x: '-20%' }} whileInView={{ x: 0 }} exit={{ x: '20%' }} transition={{ duration: 2 }}>
@@ -181,7 +181,7 @@ function Home() {
             </section>
 
             {/* Super powers */}
-            <section className="superpowers-section text-white text-center py-5">
+            <section className="superpowers-section text-white text-center py-5 ">
                 <div className="container">
                     <h3 className="mb-5 display-4">Superpowers</h3>
                     <div className="row g-4">
@@ -203,7 +203,7 @@ function Home() {
             </section>
 
             {/* testimonial */}
-            <section className=' p-5'>
+            <section className=' p-5 w-100'>
                 <h1 className='text-center mb-5 display-4'>What People Say</h1>
                 <div className='row justify-content-center'>
                     {testimonials.map((testimonial) => (
@@ -215,7 +215,7 @@ function Home() {
                             initial={{ opacity: 0, y: 50 }}
                             transition={{ duration: 0.5, delay: testimonial.id * 0.1 }}
                         >
-                            <div className='card testimonial-card p-4 shadow-sm'>
+                            <div className='card testimonial-card p-4 '>
                                 <div className='d-flex align-items-center mb-3'>
                                     <img
                                         src={testimonial.image}
@@ -239,8 +239,8 @@ function Home() {
             {/* News Letter */}
             <motion.section className="stay-connected-section py-5" initial={{ opacity: '0.5' }} whileInView={{ opacity: 1 }}>
                 <div className="container text-center">
-                    <motion.h2 className=" mb-3 display-4" initial={{ x: '-20%' }} whileInView={{ x: '0' }} exit={{ x: '20%' }} transition={{ duration: 2 }}>Stay Connected</motion.h2>
-                    <motion.p className="section-subtitle mb-4 " initial={{ x: '20%' }} whileInView={{ x: '0' }} exit={{ x: '-20%' }} transition={{ duration: 2 }}>
+                    <motion.h2 className=" mb-3 display-4" initial={{ x: '-25px' }} whileInView={{ x: '0' }} exit={{ x: '25px' }} transition={{ duration: 2 }}>Stay Connected</motion.h2>
+                    <motion.p className="section-subtitle mb-4 " initial={{ x: '25px' }} whileInView={{ x: '0' }} exit={{ x: '-25px' }} transition={{ duration: 2 }}>
                         Keep up with the latest updates, events, and community news. Sign up for our newsletter and follow us on social media to stay in the loop.
                     </motion.p>
                     <form className="newsletter-form mb-4">

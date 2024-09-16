@@ -1,33 +1,4 @@
 
-/* SUPER POWER */
-.superpowers-section {
-    background: #0a0a0a; 
-    padding: 60px 0;
-}
-
-.superpowers-section h3 {
-    color: #e0e0e0;
-    letter-spacing: 2px;
-}
-
-.power-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-.power-card h4 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.power-card p {
-    color: #bbb;
-    font-size: 0.9rem;
-}
 /* INDRO SECTION */
 
 
@@ -78,6 +49,35 @@
 }
 
 
+/* SUPER POWER */
+.superpowers-section {
+  background: #0a0a0a; 
+
+}
+
+.superpowers-section h3 {
+  color: #e0e0e0;
+  letter-spacing: 2px;
+}
+
+.power-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.power-card h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.power-card p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
 
   /* Testimonial */
   .testimonial-card {
@@ -87,6 +87,7 @@
     transition: transform 0.3s ease-in-out;
     height: 100%;
     position: relative;
+    overflow: hidden;
   }
   
   .testimonial-card:hover {
@@ -119,6 +120,7 @@
     background-color: #202020;
     color: #f1f1f1;
     padding: 60px 0;
+    overflow: hidden;
   }
   
  
@@ -143,10 +145,31 @@
   }
 
 
+/* Chat bot */
+.chatbot{
+  position: fixed;
+  bottom: 18%;
+  z-index: 1;
+  right: 8%;
+  background-color:#0f0f0f ;
+}
 
+.chatBotBtn{
+position: fixed;
+z-index: 1;
+right: 8%;
+top: 85%;
+}
 
+@media(max-width:768px){
+  .chatbot{
+    right: 11%;
+  }
+  .chatBotBtn{
+    right: 11%;
+  }
+}
 
-  
   
  
 
