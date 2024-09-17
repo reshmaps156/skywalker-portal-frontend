@@ -34,6 +34,8 @@ Skywalker portal is a web application that allows users to submit their complain
    npm run dev
 
 ## Code structure
+
+```bash
 /src
 ├── /assets                    # Images, icons, and other assets
 ├── /components                
@@ -55,8 +57,8 @@ Skywalker portal is a web application that allows users to submit their complain
 │   ├── api.js                 # API calls
 │   ├── commonApi.js           # Axios configuration  
 │   ├── serverURL.js           # server url link
-├── App.jsx                    # Main app component
-├── appStyle.module.css                  
-├── bootstrap.min.css
-├── index.css  
-├── main.jsx
+├── App.jsx                    # Main app component handling routes 
+├── appStyle.module.css        # Global app styling using CSS modules          
+├── bootstrap.min.css          # Bootstrap styling  
+├── index.css                  # General styling for the app 
+├── main.jsx                   # Application entry point
