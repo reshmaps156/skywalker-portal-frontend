@@ -12,11 +12,11 @@ Skywalker portal web application that allows users to submit their complaints to
  ## Installation
 
  1.Clone the repository
-  `git clone https://github.com/reshmaps156/skywalker-portal-frontend.git`
+  ```git clone https://github.com/reshmaps156/skywalker-portal-frontend.git```
  2.Install the required dependencies
-  `npm install`
+  ```npm install```
  3.Start 
-  `npm run dev`
+  ```npm run dev```
 
  ## Features
  
