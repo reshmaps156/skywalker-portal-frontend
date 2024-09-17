@@ -33,4 +33,16 @@ Skywalker portal is a web application that allows users to submit their complain
    ```bash
    npm run dev
 
- 
+## Code structure
+
+/src ├── /assets # Images, icons, and other assets ├── /components │ ├── Chatbot.jsx # Chatbot component │ ├── chatbot.css # Chatbot specific styles ├── /layout │ ├── Footer.jsx # Footer section │ ├── Header.jsx # Navbar section ├── /pages │ ├── about.css # Stylesheet for the About page │ ├── About.jsx # About page component │ ├── Contact.css # Stylesheet for the Contact Us page │ ├── Contact.jsx # Contact Us page component │ ├── ErrorZone.jsx # 404 Error page component │ ├── GrievanceForm.jsx # Grievance submission form component │ ├── home.css # Stylesheet for the Home page │ ├── Home.jsx # Home page component ├── /services │ ├── api.js # API calls for the app │ ├── commonApi.js # Axios configuration for API requests │ ├── serverURL.js # Server URL configuration ├── App.jsx # Main app component handling routes ├── appStyle.module.css # Global app styling using CSS modules ├── bootstrap.min.css # Bootstrap styling ├── index.css # General styling for the app ├── main.jsx # Application entry point
+
+
+### Key Directories:
+- **`/assets/`**: Holds static resources like images and icons.
+- **`/components/`**: Contains reusable components like the `Chatbot`.
+- **`/layout/`**: Contains layout components like the `Header` and `Footer`.
+- **`/pages/`**: Main pages of the application such as `Home`, `Contact`, and `About`.
+- **`/services/`**: Handles API calls and configuration for connecting to the server.
+- **`App.jsx`**: The main app component responsible for routing.
+- **`main.jsx`**: The app's entry point where the React app is initialized.
