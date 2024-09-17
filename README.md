@@ -82,7 +82,10 @@ The Skywalker-portal  Grievance App is designed for users to file complaints tha
   - React-circular-progressbar
 
 ## Screen shots
-![Homepage Screenshot](assets/home.png)
+![Homepage Screenshot](./src/assets/home.png)
+![About Screenshot](./src/assets/about.png)
+![Grievance Form Screenshot](./src/assets/form.png)
+![Contact Us Screenshot](./src/assets/contact.png)
 
 
 
