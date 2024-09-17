@@ -227,7 +227,7 @@ function GrievanceForm() {
                   transition={{ duration: 1 }}
                   className="h-100 d-flex align-items-center justify-content-center"
                 >
-                  <video src={globe} loop muted autoPlay className='w-100'></video>
+                  <video src={globe || `https://cdn.dribbble.com/userupload/4026774/file/original-d7d1fab1bfcb5eb34fd2f82790ac0749.mp4`} loop muted autoPlay className='w-100'></video>
                 </motion.div>
               </Col>
             </Row>
