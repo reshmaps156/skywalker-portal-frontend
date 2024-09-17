@@ -3,23 +3,27 @@
 Skywalker portal is a web application that allows users to submit their complaints to the legendary superhero Alden Skywalker, who resolves the issues and provides updates. This app uses a dark, sleek design to reflect the heroic yet mysterious persona of Skywalker.
 
 ## Table of Contents
+- [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
 - [Code Structure](#code-structure)
 - [External Libraries](#external-libraries)
-- [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
+
+
+## Overview
+
+The Skywalker-portal  Grievance App is designed for users to file complaints that will be resolved by the superhero Alden Skywalker. The app is built with React.js and Node.js (MERN Stack) and leverages a modern, minimalist design.
+
 
 ## Features
 
 - **Modern homepage**: The homepage uses storytelling techniques to introduce users to the app's purpose.
 - **Grievance Form**: Users can submit their complaints via a form.
-- **Admin Dashboard**: Skywalker (admin) can view and manage the grievances.
 - **Dynamic UI**: Modern UI components and transitions make the app visually appealing and responsive.
 - **Email Notifications**: Sends an email notification to the admin when a user logs grievances.
 - **Chatbot**: A virtual assistant to handle queries.
-- **Charts and Analytics**: The admin dashboard features data visualization with charts to track grievances.
+
 
 ## Installation
 
@@ -40,7 +44,7 @@ Skywalker portal is a web application that allows users to submit their complain
 ├── /assets                    # Images, icons, and other assets
 ├── /components                
 │   ├── Chatbot.jsx            # Chatbot
-│   ├── chatbot.css
+│   ├── chatbot.css            # style sheet for chatbot 
 ├── /layout
 │   ├── Footer.jsx             # Footer section
 │   ├── Header.jsx             # Navbar
@@ -62,3 +66,26 @@ Skywalker portal is a web application that allows users to submit their complain
 ├── bootstrap.min.css          # Bootstrap styling  
 ├── index.css                  # General styling for the app 
 ├── main.jsx                   # Application entry point
+```
+
+## External libraries
+
+  - Bootstrap 
+  - React Bootstrap
+  - Mui Material
+  - Framer Motion for animations
+  - FontAwesome
+  - Axios
+  - React toastify
+  - React Router DOM
+  - React Pro Sidebar
+  - React-circular-progressbar
+
+## Screen shots
+![Homepage Screenshot](assets/home.png)
+
+
+
+
+
+Developed with ❤️ by Reshama PS
