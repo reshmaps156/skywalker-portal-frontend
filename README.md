@@ -29,7 +29,7 @@ The Skywalker-portal  Grievance App is designed for users to file complaints tha
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/reshmaps156/skywalker-portal-frontend.git
+   git clone https://github.com/reshmaps156/skywalker-portal-admin.git
 2. Install the required dependencies
    ```bash
    npm install
@@ -81,7 +81,7 @@ The Skywalker-portal  Grievance App is designed for users to file complaints tha
   - React Pro Sidebar
   - React-circular-progressbar
 
-## Screen shots
+    ## Screen shots
 ![Homepage Screenshot](./src/assets/home.png)
 ![About Screenshot](./src/assets/about.png)
 ![Grievance Form Screenshot](./src/assets/form.png)

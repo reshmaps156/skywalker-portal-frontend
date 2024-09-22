@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import ErrorZone from './pages/ErrorZone'
 import Home from './pages/Home'
 import GrievanceForm from './pages/GrievanceForm'
