@@ -13,10 +13,9 @@ const Chatbot = () => {
 
   const handleSendMessage = async () => {
     if (!input.trim()) return;
-
+  
     const userMessage = { text: input, sender: 'user' };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
-
+  
     try {
       const response = await fetchDialogflowResponse(input);
       const botMessage = { text: response, sender: 'bot' };
@@ -26,9 +25,10 @@ const Chatbot = () => {
       const botMessage = { text: 'Sorry, something went wrong. Please try again.', sender: 'bot' };
       setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
     }
-
+  
     setInput('');
   };
+  
 
   const fetchDialogflowResponse = async (message) => {
     const sessionId = Date.now();
